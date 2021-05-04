@@ -83,8 +83,8 @@
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">11</span></a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">0</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">4</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">1</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">5</span></a></li>
   </ul>
 </nav>
 
@@ -128,9 +128,15 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
@@ -181,6 +187,109 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/04/Leetcode740/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="洋仔">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="洋仔小窝">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/05/04/Leetcode740/" class="post-title-link" itemprop="url">【Leetcode每日一题】2021-05-04 740 删除并获得点数 - 中等 - 动态规划 (Python)</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-05-04 22:16:18 / 修改时间：22:19:38" itemprop="dateCreated datePublished" datetime="2021-05-04T22:16:18+02:00">2021-05-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/delete-and-earn/">来源：力扣</a></p>
+<blockquote>
+<p>给你一个整数数组 nums ，你可以对它进行一些操作。<br><br>每次操作中，选择任意一个 nums[i] ，删除它并获得 nums[i] 的点数。之后，你必须删除每个等于 nums[i] - 1 或 nums[i] + 1 的元素。<br><br>开始你拥有 0 个点数。返回你能通过这些操作获得的最大点数。<br><br>示例 1：<br>输入：nums = [3,4,2]<br>输出：6<br>解释：<br>删除 4 获得 4 个点数，因此 3 也被删除。<br>之后，删除 2 获得 2 个点数。总共获得 6 个点数。<br><br>示例 2：<br>输入：nums = [2,2,3,3,3,4]<br>输出：9<br>解释：<br>删除 3 获得 3 个点数，接着要删除两个 2 和 4 。<br>之后，再次删除 3 获得 3 个点数，再次删除 3 获得 3 个点数。<br>总共获得 9 个点数。<br><br>提示：<br>1 &lt;= nums.length &lt;= 2 * 104<br>1 &lt;= nums[i] &lt;= 104</p>
+</blockquote>
+<h3 id="标签：动态规划"><a href="#标签：动态规划" class="headerlink" title="标签：动态规划"></a><strong>标签</strong>：动态规划</font></h3><h2 id="分析题意"><a href="#分析题意" class="headerlink" title="分析题意"></a>分析题意</h2><blockquote>
+<p>每次操作中，选择任意一个 nums[i] ，删除它并获得 nums[i] 的点数。之后，你必须删除每个等于 nums[i] - 1 或 nums[i] + 1 的元素。</p>
+</blockquote>
+<p>从这句话我们可以知道当我们选择了nums[i]这个数，那么我们就相当于获得了nums中所有等于nums[i]的点数，因为我们可以重复这个操作，但是代价是放弃nums中所有等于nums[i]-1和nums[i]+1的点数。我们先把题目简化，先用长度为nums中最大值加1的points数组存储所有数对应的点数，如果在nums中不存在则点数为0，之后我们便可以把数当作索引来找出对应的点数。可以看出每一个数的状态只跟它相邻的数的状态有关，所以可以用动态规划来解决。</p>
+<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="建立状态"><a href="#建立状态" class="headerlink" title="建立状态"></a>建立状态</h3><p>对于每一个nums[i]，我们可以选择拿它的点数(pick)或者不拿它的点数(not pick)，所以每一个数有两个状态。我们可以用nums中的最大值加一作为dp的长度，即len(dp)=max(nums)，建立二维DP表，初始状态用0填充dp表。</p>
+<h3 id="状态转移方程"><a href="#状态转移方程" class="headerlink" title="状态转移方程"></a>状态转移方程</h3><p>我们从前往后推，假设当前处于dp[i]，dp[i][0]代表不拿i的点数，那么之前有可能拿了i-1的点数也可能没拿，所以选两者最大值，dp[i][1]代表拿i的点数，那么必须没有拿i-1的点数，所以等于dp[i-1][0]加上nums中所有等于i的点数总和。</p>
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><p><font size=3><em>时间复杂度：O(N+M)，其中N是数组nums的长度，M是nums中元素的最大值。<br>空间复杂度：O(N+M)</em></font></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">deleteAndEarn</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span></span><br><span class="line">        max_ = <span class="built_in">max</span>(nums)</span><br><span class="line">        points = [<span class="number">0</span>] * (max_ + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            points[n] += n</span><br><span class="line">        </span><br><span class="line">        dp = [[<span class="number">0</span>, <span class="number">0</span>] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(max_+<span class="number">1</span>)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, max_+<span class="number">1</span>):</span><br><span class="line">            dp[i][<span class="number">0</span>] = <span class="built_in">max</span>(dp[i-<span class="number">1</span>])</span><br><span class="line">            dp[i][<span class="number">1</span>] = dp[i-<span class="number">1</span>][<span class="number">0</span>] + points[i]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(dp[-<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<p>因为当前状态只跟前一个状态有关，所以可以进一步简化，用两个变量not_pick和pick来保存dp的状态即可。<br><font size=3><em>时间复杂度：O(N+M)，其中N是数组nums的长度，M是nums中元素的最大值。<br>空间复杂度：O(N)</em></font></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">deleteAndEarn</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span></span><br><span class="line">        max_ = <span class="built_in">max</span>(nums)</span><br><span class="line">        points = [<span class="number">0</span>] * (max_ + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            points[n] += n</span><br><span class="line">        </span><br><span class="line">        not_pick, pick = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, max_+<span class="number">1</span>):</span><br><span class="line">            tmp = <span class="built_in">max</span>(not_pick, pick)</span><br><span class="line">            pick = not_pick + points[i]</span><br><span class="line">            not_pick = tmp</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(not_pick, pick)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/04/Leetcode1473/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -206,7 +315,16 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-05-04 18:31:09 / 修改时间：19:16:37" itemprop="dateCreated datePublished" datetime="2021-05-04T18:31:09+02:00">2021-05-04</time>
+      <time title="创建时间：2021-05-04 18:31:09 / 修改时间：22:18:14" itemprop="dateCreated datePublished" datetime="2021-05-04T18:31:09+02:00">2021-05-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
     </span>
 
   
@@ -574,13 +692,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">18k</span>
+    <span title="站点总字数">20k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">18 分钟</span>
   </span>
 </div>
 
