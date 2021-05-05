@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/code-128x128.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/code-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/code-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;}}</script>
+<meta name="description" content="题目：  有一个刺客接了一个杀死怪物的任务，他有一把剑，耐久度为m，怪物一共有n个，它们分为两种，一种是不带剑的空手怪物，一种是带剑的怪物，不同的怪物有不同的血量，血量和刺客佩剑的耐久度对应，即杀死a点血的怪物需要消耗a点耐久度。如果杀死带剑的怪物，则可以拿走怪物的剑，怪物的剑比较特殊，它可以无视血量杀死任何一只怪物并且不损失刺客自己剑的耐久度，但是每杀死一个怪物它就会少一点耐久度，耐久度为0则报">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【笔试题】刺客信条&#x2F;Assassin’s Creed (阿里巴巴2020.08.26笔试第二题)">
+<meta property="og:url" content="http://example.com/2020/08/26/Assassin-Creed/index.html">
+<meta property="og:site_name" content="洋仔小窝">
+<meta property="og:description" content="题目：  有一个刺客接了一个杀死怪物的任务，他有一把剑，耐久度为m，怪物一共有n个，它们分为两种，一种是不带剑的空手怪物，一种是带剑的怪物，不同的怪物有不同的血量，血量和刺客佩剑的耐久度对应，即杀死a点血的怪物需要消耗a点耐久度。如果杀死带剑的怪物，则可以拿走怪物的剑，怪物的剑比较特殊，它可以无视血量杀死任何一只怪物并且不损失刺客自己剑的耐久度，但是每杀死一个怪物它就会少一点耐久度，耐久度为0则报">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-26T09:08:24.000Z">
+<meta property="article:modified_time" content="2021-05-05T09:10:45.387Z">
+<meta property="article:author" content="洋仔">
+<meta property="article:tag" content="笔试题">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2020/08/26/Assassin-Creed/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;08&#x2F;26&#x2F;Assassin-Creed&#x2F;&quot;,&quot;path&quot;:&quot;2020&#x2F;08&#x2F;26&#x2F;Assassin-Creed&#x2F;&quot;,&quot;title&quot;:&quot;【笔试题】刺客信条&#x2F;Assassin’s Creed (阿里巴巴2020.08.26笔试第二题)&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>【笔试题】刺客信条/Assassin’s Creed (阿里巴巴2020.08.26笔试第二题) | 洋仔小窝</title><script src="/js/config.js"></script>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">洋仔小窝</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">12</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">1</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">6</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">洋仔</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wukangyang" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wukangyang" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="返回顶部">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/wukangyang" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/26/Assassin-Creed/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="洋仔">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="洋仔小窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【笔试题】刺客信条/Assassin’s Creed (阿里巴巴2020.08.26笔试第二题)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-08-26 11:08:24" itemprop="dateCreated datePublished" datetime="2020-08-26T11:08:24+02:00">2020-08-26</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-05-05 11:10:45" itemprop="dateModified" datetime="2021-05-05T11:10:45+02:00">2021-05-05</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=4415">题目：</a></p>
+<blockquote>
+<p>有一个刺客接了一个杀死怪物的任务，他有一把剑，耐久度为<strong>m</strong>，怪物一共有<strong>n</strong>个，它们分为两种，一种是不带剑的<strong>空手怪物</strong>，一种是<strong>带剑的怪物</strong>，不同的怪物有不同的血量，<strong>血量和刺客佩剑的耐久度对应</strong>，即杀死a点血的怪物需要消耗a点耐久度。如果杀死带剑的怪物，则可以拿走怪物的剑，怪物的剑比较特殊，它可以<strong>无视血量</strong>杀死<strong>任何一只</strong>怪物并且不损失刺客自己剑的耐久度，但是<strong>每杀死一个怪物它就会少一点耐久度</strong>，耐久度为0则报废。<br><strong>该刺客对自己的要求很高，要求自己在能杀死更多的怪物的前提下，保证自己佩剑消耗的耐久度最低。</strong><br><br><strong>输入</strong>：<br>&emsp;- n为总共的怪物数，m为刺客佩剑的耐久度；<br>&emsp;- 每个怪物信息包含两个数(a, b), a是怪物的血量，b为怪物的剑的耐久度，a和b分别存在一个列表A和B中。<br><br><strong>输出</strong>：<br>&emsp;- 输出有两个数N、M，N为最终杀死的怪物数，M为刺客佩剑损耗的耐久度。<br><br> <strong>举例</strong>：<br><strong>输入：</strong><br>n = 3, m = 5<br>A = [5, 4, 7], B= [1, 1, 7]<br><strong>输出：</strong><br>N = 3, M = 4</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 样例1 后面提供了更多的测试样例可供测试</span></span><br><span class="line">n, m = <span class="number">3</span>, <span class="number">5</span></span><br><span class="line">A = [<span class="number">5</span>, <span class="number">4</span>, <span class="number">7</span>]</span><br><span class="line">B = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">7</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">###############程序开始##################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 存储所有怪物信息并且按照血量从小到大排序</span></span><br><span class="line">monsters = <span class="built_in">sorted</span>([(i, j) <span class="keyword">for</span> i, j <span class="keyword">in</span> <span class="built_in">zip</span>(A, B)], key=<span class="keyword">lambda</span> x: x[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 记录最后杀死的怪物数以及损耗的耐久度</span></span><br><span class="line">killed = <span class="number">0</span></span><br><span class="line">cost = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># monsters_without_sword存储所有Bi为0的空手怪物，monsters_with_sword存储所有Bi不为0的带剑怪物</span></span><br><span class="line">monsters_with_sword = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># 先不考虑自动杀死的情况</span></span><br><span class="line"><span class="comment"># 临时存储m</span></span><br><span class="line">m_tmp = m</span><br><span class="line">kill_only_by_self = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> monster <span class="keyword">in</span> monsters:</span><br><span class="line">	<span class="comment"># 如果剑的耐久还够杀下一个怪，则继续杀怪</span></span><br><span class="line">	<span class="keyword">if</span> m_tmp &gt;= monster[<span class="number">0</span>]:</span><br><span class="line">		m_tmp -= monster[<span class="number">0</span>]</span><br><span class="line">		kill_only_by_self += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">	<span class="comment"># 同时将带剑怪物信息存储在monsters_with_sword中</span></span><br><span class="line">	<span class="keyword">if</span> monster[<span class="number">1</span>] != <span class="number">0</span>:</span><br><span class="line">		monsters_with_sword.append(monster)</span><br><span class="line"><span class="comment"># 得到只用自己的剑最多能杀死多少怪物以及所需要的耐久度</span></span><br><span class="line">cost_only_by_self = m - m_tmp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果所有的怪物都是空手的，则可以直接输出结果</span></span><br><span class="line"><span class="keyword">if</span> monsters_with_sword:</span><br><span class="line">	<span class="comment"># 得到最“脆皮”的带剑怪物</span></span><br><span class="line">	min_monsters_with_sword = <span class="built_in">min</span>(monsters_with_sword, key=<span class="keyword">lambda</span> x: x[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 判断起始耐久度是否足够杀死最“脆皮”的带剑怪物</span></span><br><span class="line">	<span class="keyword">if</span> min_monsters_with_sword[<span class="number">0</span>] &lt;= m:</span><br><span class="line">		<span class="comment"># 临时存储m</span></span><br><span class="line">		m_tmp = m</span><br><span class="line">		<span class="comment"># 用自己的剑杀死那个最脆皮的带剑怪物</span></span><br><span class="line">		m_tmp -= min_monsters_with_sword[<span class="number">0</span>]</span><br><span class="line">		<span class="comment"># 将该怪物从C中删除</span></span><br><span class="line">		monsters.remove(min_monsters_with_sword)</span><br><span class="line"></span><br><span class="line">		<span class="comment"># 存储从怪物身上掉落的所有剑</span></span><br><span class="line">		swords_from_monsters = <span class="built_in">sum</span>(B)</span><br><span class="line">		<span class="comment"># 算出除了之前杀死的怪物和能自动杀死的怪物之外还需要用自己的剑杀死的怪物树目</span></span><br><span class="line">		n_t = n - swords_from_monsters - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">		<span class="comment"># 记录用自己的剑杀死的怪物数</span></span><br><span class="line">		kill_by_self = <span class="number">0</span></span><br><span class="line">		<span class="keyword">for</span> monster <span class="keyword">in</span> monsters[:n_t]:</span><br><span class="line">			m_tmp -= monster[<span class="number">0</span>]</span><br><span class="line">			<span class="keyword">if</span> m_tmp &lt; <span class="number">0</span>:</span><br><span class="line">				killed = swords_from_monsters + kill_by_self + <span class="number">1</span></span><br><span class="line">				cost = m - m_tmp - monster[<span class="number">0</span>]</span><br><span class="line">				<span class="keyword">break</span></span><br><span class="line">			kill_by_self += <span class="number">1</span></span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			killed = n</span><br><span class="line">			cost = m - m_tmp</span><br><span class="line"></span><br><span class="line">		<span class="comment"># 比较只用自己剑杀的怪物数和加上自动杀的怪物数</span></span><br><span class="line">		<span class="keyword">if</span> killed &lt; kill_only_by_self:</span><br><span class="line">			killed = kill_only_by_self</span><br><span class="line">			cost = cost_only_by_self</span><br><span class="line">		<span class="keyword">elif</span> killed == kill_only_by_self:</span><br><span class="line">			<span class="comment">#  如果杀的怪物数相同，则取损耗耐久度少的</span></span><br><span class="line">			<span class="keyword">if</span> cost &gt; cost_only_by_self:</span><br><span class="line">				killed = kill_only_by_self</span><br><span class="line">				cost = cost_only_by_self</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		killed = kill_only_by_self</span><br><span class="line">		cost = cost_only_by_self</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	killed = kill_only_by_self</span><br><span class="line">	cost = cost_only_by_self</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出，killed即为N，cost即为M</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;monsters killed: &#123;&#125;, durability cost: &#123;&#125;&#x27;</span>.<span class="built_in">format</span>(killed, cost))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 样例2</span></span><br><span class="line">n, m = <span class="number">2</span>, <span class="number">1</span></span><br><span class="line">A = [<span class="number">2</span>, <span class="number">4</span>]</span><br><span class="line">B = [<span class="number">2</span>, <span class="number">0</span>]</span><br><span class="line"><span class="comment"># output: 0, 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 样例3</span></span><br><span class="line">n, m = <span class="number">5</span>, <span class="number">10</span></span><br><span class="line">A = [<span class="number">4</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">10</span>]</span><br><span class="line">B = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line"><span class="comment"># output: 5, 6</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 样例4</span></span><br><span class="line">n, m = <span class="number">5</span>, <span class="number">7</span></span><br><span class="line">A = [<span class="number">4</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">8</span>, <span class="number">10</span>]</span><br><span class="line">B = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line"><span class="comment"># output: 2, 6</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 样例5</span></span><br><span class="line">n, m = <span class="number">6</span>, <span class="number">10</span></span><br><span class="line">A = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line">B = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line"><span class="comment"># output: 4, 9</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 样例6</span></span><br><span class="line">n, m = <span class="number">6</span>, <span class="number">10</span></span><br><span class="line">A = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">B = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line"><span class="comment"># output: 5, 10</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%AC%94%E8%AF%95%E9%A2%98/" rel="tag"># 笔试题</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/04/29/kruskalMST/" rel="next" title="最小生成树MST Kruskal算法">
+                  最小生成树MST Kruskal算法 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+<script src="/js/comments.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">洋仔</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">22k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">20 分钟</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
