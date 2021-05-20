@@ -22,31 +22,30 @@
   <script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js" integrity="sha256-a5YRB27CcBwBFcT5EF/f3E4vzIqyHrSR878nseNYw64=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;}}</script>
-<meta name="description" content="来源：力扣  给你一个整数数组 nums ，你可以对它进行一些操作。每次操作中，选择任意一个 nums[i] ，删除它并获得 nums[i] 的点数。之后，你必须删除每个等于 nums[i] - 1 或 nums[i] + 1 的元素。开始你拥有 0 个点数。返回你能通过这些操作获得的最大点数。示例 1：输入：nums &#x3D; [3,4,2]输出：6解释：删除 4 获得 4 个点数，因此 3 也被删除">
+<meta name="description" content="背景关于Hexo Next主题添加canvas_nest动画背景网上有很教程，但是他们的第一个条件我就没满足——将next&#x2F;_config.yml中的canvas_nest改为true，而我的_config.yml中压根没这一项，而且我的hexo和next版本都是很新的，所以看着这些教程感觉很无奈，为啥别人默认都有这一项，难道我安装了个假next？不过我还没有放弃，终于让我在github中找到解决">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【Leetcode每日一题】2021-05-04 740 删除并获得点数 - 中等 - 动态规划 (Python)">
-<meta property="og:url" content="http://example.com/2021/05/04/Leetcode740/index.html">
+<meta property="og:title" content="【个人博客搭建之路】第1话——next主题博客添加canvas_nest动画背景">
+<meta property="og:url" content="http://example.com/2021/05/19/Hexo-Canvas-Nest/index.html">
 <meta property="og:site_name" content="洋仔小窝">
-<meta property="og:description" content="来源：力扣  给你一个整数数组 nums ，你可以对它进行一些操作。每次操作中，选择任意一个 nums[i] ，删除它并获得 nums[i] 的点数。之后，你必须删除每个等于 nums[i] - 1 或 nums[i] + 1 的元素。开始你拥有 0 个点数。返回你能通过这些操作获得的最大点数。示例 1：输入：nums &#x3D; [3,4,2]输出：6解释：删除 4 获得 4 个点数，因此 3 也被删除">
+<meta property="og:description" content="背景关于Hexo Next主题添加canvas_nest动画背景网上有很教程，但是他们的第一个条件我就没满足——将next&#x2F;_config.yml中的canvas_nest改为true，而我的_config.yml中压根没这一项，而且我的hexo和next版本都是很新的，所以看着这些教程感觉很无奈，为啥别人默认都有这一项，难道我安装了个假next？不过我还没有放弃，终于让我在github中找到解决">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-05-04T20:16:18.000Z">
-<meta property="article:modified_time" content="2021-05-04T20:19:38.363Z">
+<meta property="article:published_time" content="2021-05-19T13:02:16.000Z">
+<meta property="article:modified_time" content="2021-05-20T13:05:18.692Z">
 <meta property="article:author" content="洋仔">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="Python">
-<meta property="article:tag" content="Leetcode">
-<meta property="article:tag" content="动态规划">
+<meta property="article:tag" content="个人博客">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="Next">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2021/05/04/Leetcode740/">
+<link rel="canonical" href="http://example.com/2021/05/19/Hexo-Canvas-Nest/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;05&#x2F;04&#x2F;Leetcode740&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;05&#x2F;04&#x2F;Leetcode740&#x2F;&quot;,&quot;title&quot;:&quot;【Leetcode每日一题】2021-05-04 740 删除并获得点数 - 中等 - 动态规划 (Python)&quot;}</script>
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;05&#x2F;19&#x2F;Hexo-Canvas-Nest&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;05&#x2F;19&#x2F;Hexo-Canvas-Nest&#x2F;&quot;,&quot;title&quot;:&quot;【个人博客搭建之路】第1话——next主题博客添加canvas_nest动画背景&quot;}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
-<title>【Leetcode每日一题】2021-05-04 740 删除并获得点数 - 中等 - 动态规划 (Python) | 洋仔小窝</title><script src="/js/config.js"></script>
+<title>【个人博客搭建之路】第1话——next主题博客添加canvas_nest动画背景 | 洋仔小窝</title><script src="/js/config.js"></script>
   
 
 
@@ -124,7 +123,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE%EF%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="nav-number">1.</span> <span class="nav-text">标签：动态规划</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%9E%90%E9%A2%98%E6%84%8F"><span class="nav-number"></span> <span class="nav-text">分析题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="nav-number"></span> <span class="nav-text">动态规划</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E7%8A%B6%E6%80%81"><span class="nav-number">1.</span> <span class="nav-text">建立状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB%E6%96%B9%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">状态转移方程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python"><span class="nav-number"></span> <span class="nav-text">Python</span></a></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5-rarr-%E8%BD%AC%E5%88%B0Hexo%E7%9A%84%E6%A0%B9%E7%9B%AE%E5%BD%95"><span class="nav-number">2.1.</span> <span class="nav-text">第一步 &amp;rarr; 转到Hexo的根目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5-rarr-%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6-footer-swig"><span class="nav-number">2.2.</span> <span class="nav-text">第二步 &amp;rarr; 创建文件 footer.swig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5-rarr-%E5%AE%8C%E6%88%90%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.3.</span> <span class="nav-text">第三步 &amp;rarr; 完成设置</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -205,7 +204,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/04/Leetcode740/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/19/Hexo-Canvas-Nest/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -218,7 +217,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          【Leetcode每日一题】2021-05-04 740 删除并获得点数 - 中等 - 动态规划 (Python)
+          【个人博客搭建之路】第1话——next主题博客添加canvas_nest动画背景
         </h1>
 
         <div class="post-meta-container">
@@ -228,17 +227,23 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-05-04 22:16:18 / 修改时间：22:19:38" itemprop="dateCreated datePublished" datetime="2021-05-04T22:16:18+02:00">2021-05-04</time>
+      <time title="创建时间：2021-05-19 15:02:16" itemprop="dateCreated datePublished" datetime="2021-05-19T15:02:16+02:00">2021-05-19</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-05-20 15:05:18" itemprop="dateModified" datetime="2021-05-20T15:05:18+02:00">2021-05-20</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+          <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index"><span itemprop="name">博客搭建</span></a>
         </span>
     </span>
 
@@ -275,21 +280,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/delete-and-earn/">来源：力扣</a></p>
-<blockquote>
-<p>给你一个整数数组 nums ，你可以对它进行一些操作。<br><br>每次操作中，选择任意一个 nums[i] ，删除它并获得 nums[i] 的点数。之后，你必须删除每个等于 nums[i] - 1 或 nums[i] + 1 的元素。<br><br>开始你拥有 0 个点数。返回你能通过这些操作获得的最大点数。<br><br>示例 1：<br>输入：nums = [3,4,2]<br>输出：6<br>解释：<br>删除 4 获得 4 个点数，因此 3 也被删除。<br>之后，删除 2 获得 2 个点数。总共获得 6 个点数。<br><br>示例 2：<br>输入：nums = [2,2,3,3,3,4]<br>输出：9<br>解释：<br>删除 3 获得 3 个点数，接着要删除两个 2 和 4 。<br>之后，再次删除 3 获得 3 个点数，再次删除 3 获得 3 个点数。<br>总共获得 9 个点数。<br><br>提示：<br>1 &lt;= nums.length &lt;= 2 * 104<br>1 &lt;= nums[i] &lt;= 104</p>
-</blockquote>
-<h3 id="标签：动态规划"><a href="#标签：动态规划" class="headerlink" title="标签：动态规划"></a><strong>标签</strong>：动态规划</font></h3><h2 id="分析题意"><a href="#分析题意" class="headerlink" title="分析题意"></a>分析题意</h2><blockquote>
-<p>每次操作中，选择任意一个 nums[i] ，删除它并获得 nums[i] 的点数。之后，你必须删除每个等于 nums[i] - 1 或 nums[i] + 1 的元素。</p>
-</blockquote>
-<p>从这句话我们可以知道当我们选择了nums[i]这个数，那么我们就相当于获得了nums中所有等于nums[i]的点数，因为我们可以重复这个操作，但是代价是放弃nums中所有等于nums[i]-1和nums[i]+1的点数。我们先把题目简化，先用长度为nums中最大值加1的points数组存储所有数对应的点数，如果在nums中不存在则点数为0，之后我们便可以把数当作索引来找出对应的点数。可以看出每一个数的状态只跟它相邻的数的状态有关，所以可以用动态规划来解决。</p>
-<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="建立状态"><a href="#建立状态" class="headerlink" title="建立状态"></a>建立状态</h3><p>对于每一个nums[i]，我们可以选择拿它的点数(pick)或者不拿它的点数(not pick)，所以每一个数有两个状态。我们可以用nums中的最大值加一作为dp的长度，即len(dp)=max(nums)，建立二维DP表，初始状态用0填充dp表。</p>
-<h3 id="状态转移方程"><a href="#状态转移方程" class="headerlink" title="状态转移方程"></a>状态转移方程</h3><p>我们从前往后推，假设当前处于dp[i]，dp[i][0]代表不拿i的点数，那么之前有可能拿了i-1的点数也可能没拿，所以选两者最大值，dp[i][1]代表拿i的点数，那么必须没有拿i-1的点数，所以等于dp[i-1][0]加上nums中所有等于i的点数总和。</p>
-<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><p><font size=3><em>时间复杂度：O(N+M)，其中N是数组nums的长度，M是nums中元素的最大值。<br>空间复杂度：O(N+M)</em></font></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">deleteAndEarn</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span></span><br><span class="line">        max_ = <span class="built_in">max</span>(nums)</span><br><span class="line">        points = [<span class="number">0</span>] * (max_ + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            points[n] += n</span><br><span class="line">        </span><br><span class="line">        dp = [[<span class="number">0</span>, <span class="number">0</span>] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(max_+<span class="number">1</span>)]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, max_+<span class="number">1</span>):</span><br><span class="line">            dp[i][<span class="number">0</span>] = <span class="built_in">max</span>(dp[i-<span class="number">1</span>])</span><br><span class="line">            dp[i][<span class="number">1</span>] = dp[i-<span class="number">1</span>][<span class="number">0</span>] + points[i]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(dp[-<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
-<p>因为当前状态只跟前一个状态有关，所以可以进一步简化，用两个变量not_pick和pick来保存dp的状态即可。<br><font size=3><em>时间复杂度：O(N+M)，其中N是数组nums的长度，M是nums中元素的最大值。<br>空间复杂度：O(N)</em></font></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">deleteAndEarn</span>(<span class="params">self, nums: <span class="type">List</span>[<span class="built_in">int</span>]</span>) -&gt; <span class="built_in">int</span>:</span></span><br><span class="line">        max_ = <span class="built_in">max</span>(nums)</span><br><span class="line">        points = [<span class="number">0</span>] * (max_ + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> nums:</span><br><span class="line">            points[n] += n</span><br><span class="line">        </span><br><span class="line">        not_pick, pick = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, max_+<span class="number">1</span>):</span><br><span class="line">            tmp = <span class="built_in">max</span>(not_pick, pick)</span><br><span class="line">            pick = not_pick + points[i]</span><br><span class="line">            not_pick = tmp</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">max</span>(not_pick, pick)</span><br></pre></td></tr></table></figure>
-
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>关于Hexo Next主题添加canvas_nest动画背景网上有很教程，但是他们的第一个条件我就没满足——将<code>next/_config.yml</code>中的<code>canvas_nest</code>改为<code>true</code>，而我的<code>_config.yml</code>中压根没这一项，而且我的hexo和next版本都是很新的，所以看着这些教程感觉很无奈，为啥别人默认都有这一项，难道我安装了个假next？<br>不过我还没有放弃，终于让我在<a target="_blank" rel="noopener" href="https://github.com/theme-next/theme-next-canvas-nest">github</a>中找到解决办法，而且非常简单。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="第一步-rarr-转到Hexo的根目录"><a href="#第一步-rarr-转到Hexo的根目录" class="headerlink" title="第一步 &rarr; 转到Hexo的根目录"></a>第一步 &rarr; 转到Hexo的根目录</h3><h3 id="第二步-rarr-创建文件-footer-swig"><a href="#第二步-rarr-创建文件-footer-swig" class="headerlink" title="第二步 &rarr; 创建文件 footer.swig"></a>第二步 &rarr; 创建文件 <code>footer.swig</code></h3><p>在<code>source/_data</code>下创建<code>footer.swig</code>文件（如果没有<code>_data</code>文件夹，可以用<code>mkdir _data</code>创建）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 也可以用其他方法创建文件</span></span><br><span class="line">$ vim footer.swig</span><br></pre></td></tr></table></figure>
+<p>将下面的内容拷到文件中:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">color</span>=<span class="string">&quot;0,0,255&quot;</span> <span class="attr">opacity</span>=<span class="string">&quot;0.5&quot;</span> <span class="attr">zIndex</span>=<span class="string">&quot;-1&quot;</span> <span class="attr">count</span>=<span class="string">&quot;99&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>你可以自己设置这些参数，其中的<code>src</code>里是用的online的版本，其他很多教程是在本地安装canvas-nest。</p>
+<h3 id="第三步-rarr-完成设置"><a href="#第三步-rarr-完成设置" class="headerlink" title="第三步 &rarr; 完成设置"></a>第三步 &rarr; 完成设置</h3><p>现在转到NexT根目录，打开<code>_config.yml</code>，找到<code>custom_file_path</code>，去掉<code>footer</code>的注释即可完成设置（我的<code>_config.yml</code>中本来<code>footer</code>的值为<code>source/_data/footer.njk</code>，我没动它，直接加上<code>footer: source/_data/footer.swig</code>）。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Define custom file paths.</span></span><br><span class="line"><span class="comment"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span></span><br><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.njk</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.njk</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.njk</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.njk</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.njk</span></span><br><span class="line">  <span class="comment">#footer: source/_data/footer.njk</span></span><br><span class="line">  <span class="attr">footer:</span> <span class="string">source/_data/footer.swig</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.njk</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="comment">#style: source/_data/styles.styl</span></span><br></pre></td></tr></table></figure>
+<p>下面只要重新生成网页即可看到效果。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<p>可以去我的博客看看效果：<a target="_blank" rel="noopener" href="https://wukangyang.github.io/">洋仔小窝</a>。我喜欢黑色背景，所以修改了上面scripts中的<code>color</code>参数为<code>&quot;255,255,255&quot;</code>，为了更加明显，还将不透明度<code>opacity</code>改为<code>1.0</code>以及数目<code>count</code>改为了<code>150</code>。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">color</span>=<span class="string">&quot;255,255,255&quot;</span> <span class="attr">opacity</span>=<span class="string">&quot;1.0&quot;</span> <span class="attr">zIndex</span>=<span class="string">&quot;-1&quot;</span> <span class="attr">count</span>=<span class="string">&quot;150&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -298,24 +300,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
-              <a href="/tags/Python/" rel="tag"># Python</a>
-              <a href="/tags/Leetcode/" rel="tag"># Leetcode</a>
-              <a href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" rel="tag"># 动态规划</a>
+              <a href="/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" rel="tag"># 个人博客</a>
+              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+              <a href="/tags/Next/" rel="tag"># Next</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/05/04/Leetcode1473/" rel="prev" title="【Leetcode每日一题】2021-05-03 1473 粉刷房子III - 困难 (Python)">
-                  <i class="fa fa-chevron-left"></i> 【Leetcode每日一题】2021-05-03 1473 粉刷房子III - 困难 (Python)
+                <a href="/2021/05/19/singleton/" rel="prev" title="【设计模式】单例模式">
+                  <i class="fa fa-chevron-left"></i> 【设计模式】单例模式
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/05/11/Dijkstra/" rel="next" title="【图算法】Dijkstra——最短路径">
-                  【图算法】Dijkstra——最短路径 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>

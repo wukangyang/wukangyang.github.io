@@ -83,9 +83,9 @@
 <nav class="site-nav">
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">14</span></a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">1</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">15</span></a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">9</span></a></li>
   </ul>
 </nav>
 
@@ -131,20 +131,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -195,6 +195,112 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/19/Hexo-Canvas-Nest/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="洋仔">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="洋仔小窝">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/05/19/Hexo-Canvas-Nest/" class="post-title-link" itemprop="url">【个人博客搭建之路】第1话——next主题博客添加canvas_nest动画背景</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-05-19 15:02:16" itemprop="dateCreated datePublished" datetime="2021-05-19T15:02:16+02:00">2021-05-19</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-05-20 15:05:18" itemprop="dateModified" datetime="2021-05-20T15:05:18+02:00">2021-05-20</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index"><span itemprop="name">博客搭建</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>关于Hexo Next主题添加canvas_nest动画背景网上有很教程，但是他们的第一个条件我就没满足——将<code>next/_config.yml</code>中的<code>canvas_nest</code>改为<code>true</code>，而我的<code>_config.yml</code>中压根没这一项，而且我的hexo和next版本都是很新的，所以看着这些教程感觉很无奈，为啥别人默认都有这一项，难道我安装了个假next？<br>不过我还没有放弃，终于让我在<a target="_blank" rel="noopener" href="https://github.com/theme-next/theme-next-canvas-nest">github</a>中找到解决办法，而且非常简单。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="第一步-rarr-转到Hexo的根目录"><a href="#第一步-rarr-转到Hexo的根目录" class="headerlink" title="第一步 &rarr; 转到Hexo的根目录"></a>第一步 &rarr; 转到Hexo的根目录</h3><h3 id="第二步-rarr-创建文件-footer-swig"><a href="#第二步-rarr-创建文件-footer-swig" class="headerlink" title="第二步 &rarr; 创建文件 footer.swig"></a>第二步 &rarr; 创建文件 <code>footer.swig</code></h3><p>在<code>source/_data</code>下创建<code>footer.swig</code>文件（如果没有<code>_data</code>文件夹，可以用<code>mkdir _data</code>创建）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 也可以用其他方法创建文件</span></span><br><span class="line">$ vim footer.swig</span><br></pre></td></tr></table></figure>
+<p>将下面的内容拷到文件中:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">color</span>=<span class="string">&quot;0,0,255&quot;</span> <span class="attr">opacity</span>=<span class="string">&quot;0.5&quot;</span> <span class="attr">zIndex</span>=<span class="string">&quot;-1&quot;</span> <span class="attr">count</span>=<span class="string">&quot;99&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>你可以自己设置这些参数，其中的<code>src</code>里是用的online的版本，其他很多教程是在本地安装canvas-nest。</p>
+<h3 id="第三步-rarr-完成设置"><a href="#第三步-rarr-完成设置" class="headerlink" title="第三步 &rarr; 完成设置"></a>第三步 &rarr; 完成设置</h3><p>现在转到NexT根目录，打开<code>_config.yml</code>，找到<code>custom_file_path</code>，去掉<code>footer</code>的注释即可完成设置（我的<code>_config.yml</code>中本来<code>footer</code>的值为<code>source/_data/footer.njk</code>，我没动它，直接加上<code>footer: source/_data/footer.swig</code>）。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Define custom file paths.</span></span><br><span class="line"><span class="comment"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span></span><br><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line">  <span class="comment">#head: source/_data/head.njk</span></span><br><span class="line">  <span class="comment">#header: source/_data/header.njk</span></span><br><span class="line">  <span class="comment">#sidebar: source/_data/sidebar.njk</span></span><br><span class="line">  <span class="comment">#postMeta: source/_data/post-meta.njk</span></span><br><span class="line">  <span class="comment">#postBodyEnd: source/_data/post-body-end.njk</span></span><br><span class="line">  <span class="comment">#footer: source/_data/footer.njk</span></span><br><span class="line">  <span class="attr">footer:</span> <span class="string">source/_data/footer.swig</span></span><br><span class="line">  <span class="comment">#bodyEnd: source/_data/body-end.njk</span></span><br><span class="line">  <span class="comment">#variable: source/_data/variables.styl</span></span><br><span class="line">  <span class="comment">#mixin: source/_data/mixins.styl</span></span><br><span class="line">  <span class="comment">#style: source/_data/styles.styl</span></span><br></pre></td></tr></table></figure>
+<p>下面只要重新生成网页即可看到效果。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<p>可以去我的博客看看效果：<a target="_blank" rel="noopener" href="https://wukangyang.github.io/">洋仔小窝</a>。我喜欢黑色背景，所以修改了上面scripts中的<code>color</code>参数为<code>&quot;255,255,255&quot;</code>，为了更加明显，还将不透明度<code>opacity</code>改为<code>1.0</code>以及数目<code>count</code>改为了<code>150</code>。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">color</span>=<span class="string">&quot;255,255,255&quot;</span> <span class="attr">opacity</span>=<span class="string">&quot;1.0&quot;</span> <span class="attr">zIndex</span>=<span class="string">&quot;-1&quot;</span> <span class="attr">count</span>=<span class="string">&quot;150&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/canvas-nest.js@1/dist/canvas-nest.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/19/singleton/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -218,9 +324,24 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-05-19 14:16:43 / 修改时间：14:18:04" itemprop="dateCreated datePublished" datetime="2021-05-19T14:16:43+02:00">2021-05-19</time>
+      <time title="创建时间：2021-05-19 14:16:43" itemprop="dateCreated datePublished" datetime="2021-05-19T14:16:43+02:00">2021-05-19</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-05-20 14:57:20" itemprop="dateModified" datetime="2021-05-20T14:57:20+02:00">2021-05-20</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">设计模式</span></a>
+        </span>
     </span>
 
   
@@ -251,7 +372,7 @@
     <div class="post-body" itemprop="articleBody">
           <p><em><font size=2>参考了《人人都懂设计模式：从生活中领悟设计模式（Python实现）》</font></em></p>
 <blockquote>
-<p>Ensure a class has only one instance, and provide a global point of acces to it.<br>确保一个类只有一个实例，并且提供一个访问它的全局方法。</p>
+<p>Ensure a class has only one instance, and provide a global point of access to it.<br>确保一个类只有一个实例，并且提供一个访问它的全局方法。</p>
 </blockquote>
 <h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><ol>
 <li>你希望这个类有且只能有一个实例；</li>
@@ -304,7 +425,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/05/11/Dijkstra/" class="post-title-link" itemprop="url">Dijkstra</a>
+          <a href="/2021/05/11/Dijkstra/" class="post-title-link" itemprop="url">【图算法】Dijkstra——最短路径</a>
         </h2>
 
         <div class="post-meta-container">
@@ -314,10 +435,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-05-11 13:24:36 / 修改时间：13:27:48" itemprop="dateCreated datePublished" datetime="2021-05-11T13:24:36+02:00">2021-05-11</time>
+      <time title="创建时间：2021-05-11 13:24:36" itemprop="dateCreated datePublished" datetime="2021-05-11T13:24:36+02:00">2021-05-11</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-05-20 14:57:06" itemprop="dateModified" datetime="2021-05-20T14:57:06+02:00">2021-05-20</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -606,7 +733,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/02/%E4%BD%BF%E7%94%A8Hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2Github%E4%B8%8A/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/02/Hexo_Create_Blog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -619,7 +746,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/05/02/%E4%BD%BF%E7%94%A8Hexo%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2Github%E4%B8%8A/" class="post-title-link" itemprop="url">使用Hexo创建博客并部署Github上</a>
+          <a href="/2021/05/02/Hexo_Create_Blog/" class="post-title-link" itemprop="url">【个人博客搭建之路】使用Hexo创建博客并部署Github上</a>
         </h2>
 
         <div class="post-meta-container">
@@ -637,8 +764,17 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-05-04 19:16:37" itemprop="dateModified" datetime="2021-05-04T19:16:37+02:00">2021-05-04</time>
+        <time title="修改时间：2021-05-20 15:01:36" itemprop="dateModified" datetime="2021-05-20T15:01:36+02:00">2021-05-20</time>
       </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index"><span itemprop="name">博客搭建</span></a>
+        </span>
+    </span>
 
   
       </div>
@@ -666,8 +802,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>关键字：Mac、Node.js、Hexo、Github</p>
-<h3 id="1-下载安装Node-js"><a href="#1-下载安装Node-js" class="headerlink" title="1. 下载安装Node.js"></a>1. <a target="_blank" rel="noopener" href="https://nodejs.org/en/">下载安装Node.js</a></h3><p><img src="https://img-blog.csdnimg.cn/20210503055158425.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjA2MjA5OA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>在mac的命令行输入一下命令查看是否安装好Node.js：</p>
+          <h3 id="1-下载安装Node-js"><a href="#1-下载安装Node-js" class="headerlink" title="1. 下载安装Node.js"></a>1. <a target="_blank" rel="noopener" href="https://nodejs.org/en/">下载安装Node.js</a></h3><p><img src="https://img-blog.csdnimg.cn/20210503055158425.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NjA2MjA5OA==,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>在mac的命令行输入一下命令查看是否安装好Node.js：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">################################################</span></span><br><span class="line"><span class="comment"># 进入root</span></span><br><span class="line">$ sudo su</span><br><span class="line"></span><br><span class="line"><span class="comment">################################################</span></span><br><span class="line"><span class="comment"># 查看node和npm版本</span></span><br><span class="line">sh-3.2<span class="comment"># node -v</span></span><br><span class="line">v14.16.1</span><br><span class="line">sh-3.2<span class="comment"># npm -v</span></span><br><span class="line">6.14.12</span><br></pre></td></tr></table></figure>
 <h3 id="2-安装hexo"><a href="#2-安装hexo" class="headerlink" title="2. 安装hexo"></a>2. 安装hexo</h3><p>用npm安装hexo (依然在root下)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh-3.2<span class="comment"># npm install -g hexo-cli</span></span><br></pre></td></tr></table></figure>
@@ -714,7 +849,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/02/%E4%BD%BF%E7%94%A8ffmpeg%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAmp4%E6%96%87%E4%BB%B6/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/02/ffmpeg_merge_mp4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -727,7 +862,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/05/02/%E4%BD%BF%E7%94%A8ffmpeg%E5%90%88%E5%B9%B6%E5%A4%9A%E4%B8%AAmp4%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">使用ffmpeg合并多个mp4文件</a>
+          <a href="/2021/05/02/ffmpeg_merge_mp4/" class="post-title-link" itemprop="url">使用ffmpeg合并多个mp4文件</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1012,13 +1147,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">28k</span>
+    <span title="站点总字数">30k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">26 分钟</span>
+    <span title="站点阅读时长">27 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
