@@ -85,7 +85,7 @@
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">16</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">3</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">10</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a></li>
   </ul>
 </nav>
 
@@ -131,7 +131,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -186,6 +186,118 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/25/dsa-deque/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="洋仔">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="洋仔小窝">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/05/25/dsa-deque/" class="post-title-link" itemprop="url">【数据结构与算法】双端队列 deque</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-05-25 00:25:31 / 修改时间：00:27:03" itemprop="dateCreated datePublished" datetime="2021-05-25T00:25:31+02:00">2021-05-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+        </span>
+    </span>
+
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><em><font size=2>参考《程序员面试指南：IT名企算法于数据结构题目最优解（第2版）》</font></em></p>
+<h2 id="双端队列deque"><a href="#双端队列deque" class="headerlink" title="双端队列deque"></a>双端队列deque</h2><p>普通的队列是<strong>先入先出FIFO</strong>（First In First Out），只能从队尾添加元素，从队首弹出元素。而双端队列则是从队尾添加元素，但是既可以从队首弹出元素，和普通的队列一样，也可以和栈一样从队尾弹出元素，所以叫双端队列<strong>deque</strong>（double-ended queue），它同时具备队列（FIFO）和栈（LIFO）的特性。</p>
+<h2 id="生成窗口最大值数组"><a href="#生成窗口最大值数组" class="headerlink" title="生成窗口最大值数组"></a>生成窗口最大值数组</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
+<p>有一个整型数组<code>arr</code>和一个大小为<code>w</code>的窗口从数组的最左边滑到最右边，窗口每次向右边滑一个位置。如果数组长度为<code>n</code>，窗口大小为<code>w</code>，则一共产生<code>n-w+1</code>个窗口的最大值。请实现一个函数。<br>● <strong>输入</strong>：整型数组<code>arr</code>，窗口大小为<code>w</code>。<br>● <strong>输出</strong>：一个长度为<code>n-w+1</code>的数组<code>res</code>，<code>res[i]</code>表示每一种窗口状态下的最大值。<br><br><strong>示例</strong>：<br>输入：<code>arr = [4，3，5，4，3，3，6，7]</code>, <code>w = 3</code><br>输出：<code>res = [5，5，5，4，6，7]</code></p>
+</blockquote>
+<h3 id="暴力解法"><a href="#暴力解法" class="headerlink" title="暴力解法"></a>暴力解法</h3><p>时间复杂度为$\mathcal{O}(N\times w)$，遍历<code>arr</code>，每次统计<code>w</code>窗口中的最大值即可。</p>
+<h3 id="双端队列解法"><a href="#双端队列解法" class="headerlink" title="双端队列解法"></a>双端队列解法</h3><p>时间复杂度为$\mathcal{O}(N)$。<br>大致思路是维护一个从队首到队尾单调递减的双端队列<code>qmax</code>，其中存放着<code>arr</code>中的下标，还有一个<code>res</code>数组。<br>遍历到<code>arr[i]</code>时<code>qmax</code>的更新规则为：</p>
+<ol>
+<li>如果<code>qmax</code>为空，则直接将<code>i</code>放入队尾；</li>
+<li>如果<code>qmax</code>不为空，则需要判断队尾元素<code>j</code>对应<code>arr[j]</code>与当前元素的大小：</li>
+</ol>
+<p>1). 如果<code>arr[j] &lt;= arr[i]</code>，则弹出<code>j</code>，继续更新规则；<br>2). 如果<code>arr[j] &gt; arr[i]</code>，则直接将<code>i</code>添加进队尾。<br>3. 如果<code>qmax[0] == i - w</code>，则说明队首元素不再位于<code>w</code>窗口内，则弹出队首元素。<br>4. 如果<code>i &gt;= w - 1</code>，则向<code>res</code>添加<code>arr[qmax[0]]</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">arr = [<span class="number">4</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line">w = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">n = <span class="built_in">len</span>(arr)</span><br><span class="line"><span class="comment"># Python中用list模拟deque</span></span><br><span class="line">deque, res = [], []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> deque:</span><br><span class="line">        deque.append(i)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">while</span> deque <span class="keyword">and</span> arr[i] &gt;= arr[deque[-<span class="number">1</span>]]:</span><br><span class="line">            deque.pop()</span><br><span class="line">        deque.append(i)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> deque[<span class="number">0</span>] == i - w:</span><br><span class="line">            deque.pop(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> i &gt;= w - <span class="number">1</span>:</span><br><span class="line">        res.append(arr[deque[<span class="number">0</span>]])</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(res)</span><br><span class="line"><span class="comment"># [5, 5, 5, 4, 6, 7]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="最大值减去最小值差值小于等于num的子数组数量"><a href="#最大值减去最小值差值小于等于num的子数组数量" class="headerlink" title="最大值减去最小值差值小于等于num的子数组数量"></a>最大值减去最小值差值小于等于num的子数组数量</h2><h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
+<p>给定数组<code>arr</code>和整数<code>num</code>，返回一共有多少个子数组满足如下情况：<br><code>max(arr[i..j]) - min(arr[i..j]) &lt;= num</code><br><br><strong>示例</strong>：<br>输入：<code>arr = [4，3，5，4，3，3，6，7]</code>, <code>num = 1</code><br>输出：<code>ans = 14</code></p>
+</blockquote>
+<h3 id="暴力解法-1"><a href="#暴力解法-1" class="headerlink" title="暴力解法"></a>暴力解法</h3><p>时间复杂度为$\mathcal{O}(N^3)$，首先<code>arr</code>一共有$\mathcal{O}(N^2)$个子数组，然后找出每个子数组的最小值和最大值，再判断是否满足条件$\mathcal{O}(N)$。</p>
+<h3 id="双端队列解法-1"><a href="#双端队列解法-1" class="headerlink" title="双端队列解法"></a>双端队列解法</h3><p>时间复杂度为$\mathcal{O}(N)$。<br>大致思路是维护两个双端队列<code>qmax</code>和<code>qmin</code>，分别是从队首到队尾递减和递增，<code>qmax</code>队首表示当前子数组<code>arr[i..j]</code>最大值，<code>qmin</code>队首表示当前子数组<code>arr[i..j]</code>最小值，<code>i</code>和<code>j</code>都是从<code>0</code>开始的两个指针，<code>i</code>表示子数组左边界，<code>j</code>表示子数组右边界，<code>ans</code>代表最终答案，初始为<code>0</code>。</p>
+<ol>
+<li>遍历到<code>arr[j]</code>时，更新<code>qmax</code>和<code>qmin</code>，更新规则和上一题一样；</li>
+<li>重复第一步直到<code>arr[qmax[0]] - arr[qmin[0]] &gt; num</code>，则<code>j</code>指针暂停移动，<code>ans += j - i</code>（<code>j - i</code>表示严格以<code>i</code>起始的满足条件的子数组数量），然后如判断<code>qmax</code>和<code>qmin</code>的队首元素是否为i，如果是则弹出<code>i</code>，之后将<code>i</code>指针向后移动一位，重复一二步。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">arr = [<span class="number">4</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line">num = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">n = <span class="built_in">len</span>(arr)</span><br><span class="line">qmax, qmin = [], []</span><br><span class="line">ans = <span class="number">0</span></span><br><span class="line">i, j = <span class="number">0</span>, <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> i &lt; n:</span><br><span class="line">    <span class="keyword">while</span> j &lt; n:</span><br><span class="line">        <span class="keyword">while</span> qmax <span class="keyword">and</span> arr[j] &gt;= arr[qmax[-<span class="number">1</span>]]:</span><br><span class="line">            qmax.pop()</span><br><span class="line">        qmax.append(j)</span><br><span class="line">        <span class="keyword">while</span> qmin <span class="keyword">and</span> arr[j] &lt;= arr[qmin[-<span class="number">1</span>]]:</span><br><span class="line">            qmin.pop()</span><br><span class="line">        qmin.append(j)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> arr[qmax[<span class="number">0</span>]] - arr[qmin[<span class="number">0</span>]] &gt; num:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        j += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    ans += j - i</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> qmax[<span class="number">0</span>] == i:</span><br><span class="line">        qmax.pop(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">if</span> qmin[<span class="number">0</span>] == i:</span><br><span class="line">        qmin.pop(<span class="number">0</span>)</span><br><span class="line">    i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(ans)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">arr = [4, 3, 5, 4, 3, 3, 6, 7]</span></span><br><span class="line"><span class="string">num = 1</span></span><br><span class="line"><span class="string">ans = 14</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">arr = [4, 3, 5, 4, 3, 3, 6, 7]</span></span><br><span class="line"><span class="string">num = 2</span></span><br><span class="line"><span class="string">ans = 24</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -561,7 +673,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-05-20 14:57:06" itemprop="dateModified" datetime="2021-05-20T14:57:06+02:00">2021-05-20</time>
+        <time title="修改时间：2021-05-25 00:34:02" itemprop="dateModified" datetime="2021-05-25T00:34:02+02:00">2021-05-25</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -600,10 +712,10 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>Dijkstra(迪杰斯特拉)算法是典型的单源最短路径算法，用于计算一个节点到其他所有节点的最短路径。主要特点是以起始点为中心向外层层扩展，直到扩展到终点为止。算法要求<strong>所有边的权重必须是非负的。</strong></p>
-<p><strong>问题：</strong><br>给定三个集合V、 E、 W，其中，V存放着所有顶点的index/name（下面代码里的V为节点数），E存放所有边的信息，W存放着E中对应边的权重（下面代码里把E和W合并到在一起了）。现在给出V中的一个顶点A，求从A出发到其他顶点的最短路径，即经过边的权重和最小。</p>
+<p><strong>问题：</strong><br>给定三个集合<code>V</code>、 <code>E</code>、 <code>W</code>，其中，<code>V</code>存放着所有顶点的<code>index/name</code>（下面代码里的<code>V</code>为节点数），<code>E</code>存放所有边的信息，<code>W</code>存放着<code>E</code>中对应边的权重（下面代码里把<code>E</code>和<code>W</code>合并到在一起了）。现在给出<code>V</code>中的一个顶点<code>A</code>，求从<code>A</code>出发到其他顶点的最短路径，即经过边的权重和最小。</p>
 <p><strong>基本思路：</strong></p>
 <ol>
-<li>建立<strong>优先队列pq</strong>（小顶堆），队列里存储在当前条件下（表示以后可能还会被更新）离源点最近距离的节点及其距离(距离是为了供优先队列比较大小用)，初始只有源点，其距离值为0；还需要一个<strong>dist</strong>数组以及<strong>visited</strong>数组，数组长度均为节点个数；dist用来记录当前状态下各个节点离源点的最短路径，初始除源点外的值为无穷大，源点的值为0；visited用来记录各个节点是否已经被优先队列弹出过，若为True则表示当前节点被弹出过。</li>
+<li>建立优先队列<code>pq</code>（小顶堆），队列里存储在当前条件下（表示以后可能还会被更新）离源点最近距离的节点及其距离(距离是为了供优先队列比较大小用)，初始只有源点，其距离值为<code>0</code>；还需要一个<code>dist</code>数组以及<code>visited</code>数组，数组长度均为节点个数；<code>dist</code>用来记录当前状态下各个节点离源点的最短路径，初始除源点外的值为<strong>无穷大</strong>，源点的值为<code>0</code>；<code>visited</code>用来记录各个节点是否已经被优先队列弹出过，若为<code>True</code>则表示当前节点被弹出过。</li>
 <li> 如果优先队列不为空，则弹出优先队列队顶元素，即下一个已经更新过最短路径的节点，如果该节点已经被访问了，即表示在弹出该节点之前该节点有一个比当前最短路径更近的情况被弹出过，则此情况应该丢弃。这也说明我们每次加入优先队列的元素不一定就是最短路径的情况，但是优先队列优先弹出最短路径，这也是为什么我们用优先队列而不是普通队列的原因。</li>
 <li>如果弹出的节点之前没有被访问过/弹出过，那么该节点的最短路径就被确定了，然后遍历与该节点直接相连的节点，并更新这些节点的最短路径。</li>
 <li>如果优先队列为空，则说明所有节点的最短路径都已经被确定了，结束循环。</li>
@@ -1148,108 +1260,9 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/26/Assassin-Creed/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="洋仔">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="洋仔小窝">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/08/26/Assassin-Creed/" class="post-title-link" itemprop="url">【笔试题】刺客信条/Assassin’s Creed (阿里巴巴2020.08.26笔试第二题)</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-08-26 11:08:24" itemprop="dateCreated datePublished" datetime="2020-08-26T11:08:24+02:00">2020-08-26</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-05-05 11:10:45" itemprop="dateModified" datetime="2021-05-05T11:10:45+02:00">2021-05-05</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>2.5k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="http://acm.hdu.edu.cn/showproblem.php?pid=4415">题目：</a></p>
-<blockquote>
-<p>有一个刺客接了一个杀死怪物的任务，他有一把剑，耐久度为<strong>m</strong>，怪物一共有<strong>n</strong>个，它们分为两种，一种是不带剑的<strong>空手怪物</strong>，一种是<strong>带剑的怪物</strong>，不同的怪物有不同的血量，<strong>血量和刺客佩剑的耐久度对应</strong>，即杀死a点血的怪物需要消耗a点耐久度。如果杀死带剑的怪物，则可以拿走怪物的剑，怪物的剑比较特殊，它可以<strong>无视血量</strong>杀死<strong>任何一只</strong>怪物并且不损失刺客自己剑的耐久度，但是<strong>每杀死一个怪物它就会少一点耐久度</strong>，耐久度为0则报废。<br><strong>该刺客对自己的要求很高，要求自己在能杀死更多的怪物的前提下，保证自己佩剑消耗的耐久度最低。</strong><br><br><strong>输入</strong>：<br>&emsp;- n为总共的怪物数，m为刺客佩剑的耐久度；<br>&emsp;- 每个怪物信息包含两个数(a, b), a是怪物的血量，b为怪物的剑的耐久度，a和b分别存在一个列表A和B中。<br><br><strong>输出</strong>：<br>&emsp;- 输出有两个数N、M，N为最终杀死的怪物数，M为刺客佩剑损耗的耐久度。<br><br> <strong>举例</strong>：<br><strong>输入：</strong><br>n = 3, m = 5<br>A = [5, 4, 7], B= [1, 1, 7]<br><strong>输出：</strong><br>N = 3, M = 4</p>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 样例1 后面提供了更多的测试样例可供测试</span></span><br><span class="line">n, m = <span class="number">3</span>, <span class="number">5</span></span><br><span class="line">A = [<span class="number">5</span>, <span class="number">4</span>, <span class="number">7</span>]</span><br><span class="line">B = [<span class="number">1</span>, <span class="number">1</span>, <span class="number">7</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">###############程序开始##################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 存储所有怪物信息并且按照血量从小到大排序</span></span><br><span class="line">monsters = <span class="built_in">sorted</span>([(i, j) <span class="keyword">for</span> i, j <span class="keyword">in</span> <span class="built_in">zip</span>(A, B)], key=<span class="keyword">lambda</span> x: x[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 记录最后杀死的怪物数以及损耗的耐久度</span></span><br><span class="line">killed = <span class="number">0</span></span><br><span class="line">cost = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># monsters_without_sword存储所有Bi为0的空手怪物，monsters_with_sword存储所有Bi不为0的带剑怪物</span></span><br><span class="line">monsters_with_sword = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># 先不考虑自动杀死的情况</span></span><br><span class="line"><span class="comment"># 临时存储m</span></span><br><span class="line">m_tmp = m</span><br><span class="line">kill_only_by_self = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> monster <span class="keyword">in</span> monsters:</span><br><span class="line">	<span class="comment"># 如果剑的耐久还够杀下一个怪，则继续杀怪</span></span><br><span class="line">	<span class="keyword">if</span> m_tmp &gt;= monster[<span class="number">0</span>]:</span><br><span class="line">		m_tmp -= monster[<span class="number">0</span>]</span><br><span class="line">		kill_only_by_self += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">	<span class="comment"># 同时将带剑怪物信息存储在monsters_with_sword中</span></span><br><span class="line">	<span class="keyword">if</span> monster[<span class="number">1</span>] != <span class="number">0</span>:</span><br><span class="line">		monsters_with_sword.append(monster)</span><br><span class="line"><span class="comment"># 得到只用自己的剑最多能杀死多少怪物以及所需要的耐久度</span></span><br><span class="line">cost_only_by_self = m - m_tmp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果所有的怪物都是空手的，则可以直接输出结果</span></span><br><span class="line"><span class="keyword">if</span> monsters_with_sword:</span><br><span class="line">	<span class="comment"># 得到最“脆皮”的带剑怪物</span></span><br><span class="line">	min_monsters_with_sword = <span class="built_in">min</span>(monsters_with_sword, key=<span class="keyword">lambda</span> x: x[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">	<span class="comment"># 判断起始耐久度是否足够杀死最“脆皮”的带剑怪物</span></span><br><span class="line">	<span class="keyword">if</span> min_monsters_with_sword[<span class="number">0</span>] &lt;= m:</span><br><span class="line">		<span class="comment"># 临时存储m</span></span><br><span class="line">		m_tmp = m</span><br><span class="line">		<span class="comment"># 用自己的剑杀死那个最脆皮的带剑怪物</span></span><br><span class="line">		m_tmp -= min_monsters_with_sword[<span class="number">0</span>]</span><br><span class="line">		<span class="comment"># 将该怪物从C中删除</span></span><br><span class="line">		monsters.remove(min_monsters_with_sword)</span><br><span class="line"></span><br><span class="line">		<span class="comment"># 存储从怪物身上掉落的所有剑</span></span><br><span class="line">		swords_from_monsters = <span class="built_in">sum</span>(B)</span><br><span class="line">		<span class="comment"># 算出除了之前杀死的怪物和能自动杀死的怪物之外还需要用自己的剑杀死的怪物树目</span></span><br><span class="line">		n_t = n - swords_from_monsters - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">		<span class="comment"># 记录用自己的剑杀死的怪物数</span></span><br><span class="line">		kill_by_self = <span class="number">0</span></span><br><span class="line">		<span class="keyword">for</span> monster <span class="keyword">in</span> monsters[:n_t]:</span><br><span class="line">			m_tmp -= monster[<span class="number">0</span>]</span><br><span class="line">			<span class="keyword">if</span> m_tmp &lt; <span class="number">0</span>:</span><br><span class="line">				killed = swords_from_monsters + kill_by_self + <span class="number">1</span></span><br><span class="line">				cost = m - m_tmp - monster[<span class="number">0</span>]</span><br><span class="line">				<span class="keyword">break</span></span><br><span class="line">			kill_by_self += <span class="number">1</span></span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			killed = n</span><br><span class="line">			cost = m - m_tmp</span><br><span class="line"></span><br><span class="line">		<span class="comment"># 比较只用自己剑杀的怪物数和加上自动杀的怪物数</span></span><br><span class="line">		<span class="keyword">if</span> killed &lt; kill_only_by_self:</span><br><span class="line">			killed = kill_only_by_self</span><br><span class="line">			cost = cost_only_by_self</span><br><span class="line">		<span class="keyword">elif</span> killed == kill_only_by_self:</span><br><span class="line">			<span class="comment">#  如果杀的怪物数相同，则取损耗耐久度少的</span></span><br><span class="line">			<span class="keyword">if</span> cost &gt; cost_only_by_self:</span><br><span class="line">				killed = kill_only_by_self</span><br><span class="line">				cost = cost_only_by_self</span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		killed = kill_only_by_self</span><br><span class="line">		cost = cost_only_by_self</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">	killed = kill_only_by_self</span><br><span class="line">	cost = cost_only_by_self</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出，killed即为N，cost即为M</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;monsters killed: &#123;&#125;, durability cost: &#123;&#125;&#x27;</span>.<span class="built_in">format</span>(killed, cost))</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 样例2</span></span><br><span class="line">n, m = <span class="number">2</span>, <span class="number">1</span></span><br><span class="line">A = [<span class="number">2</span>, <span class="number">4</span>]</span><br><span class="line">B = [<span class="number">2</span>, <span class="number">0</span>]</span><br><span class="line"><span class="comment"># output: 0, 0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 样例3</span></span><br><span class="line">n, m = <span class="number">5</span>, <span class="number">10</span></span><br><span class="line">A = [<span class="number">4</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">10</span>]</span><br><span class="line">B = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line"><span class="comment"># output: 5, 6</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 样例4</span></span><br><span class="line">n, m = <span class="number">5</span>, <span class="number">7</span></span><br><span class="line">A = [<span class="number">4</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">8</span>, <span class="number">10</span>]</span><br><span class="line">B = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line"><span class="comment"># output: 2, 6</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 样例5</span></span><br><span class="line">n, m = <span class="number">6</span>, <span class="number">10</span></span><br><span class="line">A = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line">B = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line"><span class="comment"># output: 4, 9</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 样例6</span></span><br><span class="line">n, m = <span class="number">6</span>, <span class="number">10</span></span><br><span class="line">A = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">B = [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line"><span class="comment"># output: 5, 10</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 <script src="/js/comments.js"></script>
 </div>
   </main>
@@ -1271,13 +1284,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">34k</span>
+    <span title="站点总字数">36k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">31 分钟</span>
+    <span title="站点阅读时长">33 分钟</span>
   </span>
 </div>
 <div class="busuanzi-count">
